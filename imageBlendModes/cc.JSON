@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "mode" : "normal"
+    },
+    {
+        "id" : 2,
+        "mode" : "screen" 
+    },
+    {
+        "id" : 3,
+        "mode" : "overlay"
+    }
+]
