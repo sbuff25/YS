@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <title>
+            Headings
+        </title>
+    <script language="javascript">
+        var string = "<h1>Heading 1</h1>                                                     <h2>Heading 2</h2>                                                          <h3>Heading 3</h3>                                                           <h4>Heading 4</h4>                                                      <h5>Heading 5</h5>                                                <h6>Heading 6</h6>"
+            
+         function convertIt()
+                {
+                    var code = document.getElementById("code").value;
+                    document.getElementById("display").innerHTML = code;  
+                }
+        function fillExample()
+        {
+            document.getElementById("code").value = string;
+            ;
+            
+        }
+    </script>
+	<style>
+	body{
+		font-family: "Helvetica";
+	}
+	</style>
+    </head>
+    <body onload="fillExample();">
+        
+        <table>
+            
+            <tr>
+                <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
+                    Headings
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                <textarea id="code" rows="20" cols="50" style="font-family:Helvetica; font-size:20px">   
+                </textarea>    
+                </td>
+                <td>
+                <div id="display" style="border: groove; width:500px; height:480px; overflow: auto"></div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td align="center">
+                    <button id="btnSubmit" onclick="convertIt();" style="font-family:Helvetica;font-size:22px">Try it!</button>
+                </td>
+            </tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+			<td colspan="2" style="font-family:Helvetica" align="center">
+				The code editor allows you to try out different HTML tags to see what would be displayed in a web browser
+			</td>
+        </table>
+        
+    </body>
+</html>
