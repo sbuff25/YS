@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>
-            Universal
+            Headers
         </title>
     <script language="javascript">
-        var string = "<html>                                                                                         <head>                                                                                       <style> *{color: red; }</style>                                                                              </head>                                                                                  <body><p>Content</p><\/body>                                                                               </html>"
-         function convertIt()
+        var string = "<table>                                                                                         <tr>                                                                                <th>Month</th>                                                              <th>Average Temp (F)</th>                                           <th>Average Temp (C)</th>                                                       </tr>                                                                                               <tr>                                                                                         <td>Jan</td>                                                                        <td>32&deg;</td>                                                                                     <td>0&deg;</td>                                                                              </tr>                                                                                             </table>"
+         function convertIt()              
                 {
                     var code = document.getElementById("code").value;
                     document.getElementById("display").innerHTML = code;  
@@ -29,7 +29,7 @@
             
             <tr>
                 <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
-                    Universal
+                    Headers
                 </td>
                 
             </tr>

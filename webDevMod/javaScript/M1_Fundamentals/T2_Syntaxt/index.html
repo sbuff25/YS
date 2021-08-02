@@ -2,18 +2,26 @@
 <html>
     <head>
         <title>
-            Universal
+            Syntax
         </title>
     <script language="javascript">
-        var string = "<html>                                                                                         <head>                                                                                       <style> *{color: red; }</style>                                                                              </head>                                                                                  <body><p>Content</p><\/body>                                                                               </html>"
+        var scriptTag = "document.getElementById('display').innerHTML =" + convertScript();
+         function convertScript(){
+             new Function(scriptTag)()
+             return scriptTag;
+         }
          function convertIt()
                 {
                     var code = document.getElementById("code").value;
-                    document.getElementById("display").innerHTML = code;  
+                    convertScript();
+                    document.getElementById("display").innerHTML = code + convertScript();
+                    
+                    
+                    
                 }
         function fillExample()
         {
-            document.getElementById("code").value = string;
+            document.getElementById("code").value = "<html>                                                                                 <head></head>                                                                   <body>  <script>"+ scriptTag + "<\/script><\/body>                                             </html>";
             
         }
     </script>
@@ -29,7 +37,7 @@
             
             <tr>
                 <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
-                    Universal
+                    Syntax
                 </td>
                 
             </tr>

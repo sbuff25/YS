@@ -2,18 +2,20 @@
 <html>
     <head>
         <title>
-            HTML Module
+            Debugging
         </title>
     <script language="javascript">
-         function convertIt()
+        var string = "<h1> This is my title                                                                    <br>                                                                                                     This is also some content but it shouldnt be formatted the same as my title, fix me!"
+         function convertIt()              
                 {
                     var code = document.getElementById("code").value;
                     document.getElementById("display").innerHTML = code;  
+
+
                 }
         function fillExample()
         {
-            document.getElementById("code").value = "Type something in here surrounded by tags and press 'Try It' to see what it does. \n\nFor example: <h1>Heading 1</h1>";
-            
+            document.getElementById("code").value = string;
         }
     </script>
 	<style>
@@ -28,7 +30,7 @@
             
             <tr>
                 <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
-                    HTML Module
+                    Debugging
                 </td>
                 
             </tr>
