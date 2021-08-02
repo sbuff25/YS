@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>
-            HTML Module
+            Fonts
         </title>
     <script language="javascript">
+        var string = "<html>                                                                                         <head>                                                                                       <style>                                                                                       .arial{ font-family: Arial, sans-serif}                                .verdana{font-family: Verdana, sans-serif}                             .georgia{font-family: Georgia, serif}                                    </style>                                                                                                      </head>                                                                                  <body>                                                                                         <p class='arial'>Content<p>                                                        <p class='verdana'>Content</p>                                                            <p class='georgia'>Content</p>                                                                   <\/body>                                                                               </html>"
          function convertIt()
                 {
                     var code = document.getElementById("code").value;
@@ -12,7 +13,7 @@
                 }
         function fillExample()
         {
-            document.getElementById("code").value = "Type something in here surrounded by tags and press 'Try It' to see what it does. \n\nFor example: <h1>Heading 1</h1>";
+            document.getElementById("code").value = string;
             
         }
     </script>
@@ -28,7 +29,7 @@
             
             <tr>
                 <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
-                    HTML Module
+                    Fonts
                 </td>
                 
             </tr>

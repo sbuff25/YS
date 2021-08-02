@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>
-            HTML Module
+            Inline
         </title>
     <script language="javascript">
+        var string = "<html>                                                                                         <head>                                                                                                                                                                              </head>                                                                                  <body>                                                                                         <p style='color: red'>Content</p>                                                        <p style='color: green'>Content</p>                                                             <p style='color: blue'>Content</p>                                                      <\/body>                                                                               </html>"
          function convertIt()
                 {
                     var code = document.getElementById("code").value;
@@ -12,7 +13,7 @@
                 }
         function fillExample()
         {
-            document.getElementById("code").value = "Type something in here surrounded by tags and press 'Try It' to see what it does. \n\nFor example: <h1>Heading 1</h1>";
+            document.getElementById("code").value = string;
             
         }
     </script>
@@ -28,7 +29,7 @@
             
             <tr>
                 <td align="center" colspan="2" style="font-family:Helvetica; font-size:32px">
-                    HTML Module
+                    Inline
                 </td>
                 
             </tr>
