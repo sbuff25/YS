@@ -5,23 +5,20 @@
             Syntax
         </title>
     <script language="javascript">
-        var scriptTag = "document.getElementById('display').innerHTML =" + convertScript();
-         function convertScript(){
-             new Function(scriptTag)()
-             return scriptTag;
-         }
+        var scriptTag = "console.log('working')";
+
          function convertIt()
                 {
+                    eval(scriptTag);
                     var code = document.getElementById("code").value;
-                    convertScript();
-                    document.getElementById("display").innerHTML = code + convertScript();
+                    document.getElementById("display").innerHTML = code;
                     
                     
                     
                 }
         function fillExample()
         {
-            document.getElementById("code").value = "<html>                                                                                 <head></head>                                                                   <body>  <script>"+ scriptTag + "<\/script><\/body>                                             </html>";
+            document.getElementById("code").value = "<html>                                                                                 <head></head>                                                                   <body>                                                               <script>"+ scriptTag + "<\/script>                                                                                                                  <\/body>                                                                                                  </html>";
             
         }
     </script>

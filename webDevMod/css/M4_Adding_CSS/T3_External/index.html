@@ -5,15 +5,19 @@
             External
         </title>
     <script language="javascript">
-        var string = "<html>                                                                                         <head>                                                                                   <link rel='stylesheet' href='./style.css'>                                                                                                                    </head>                                                                                  <body>                                                                                         <p>Content<p>                                                        <p>Content</p>                                                            <p>Content</p>                                                                   <\/body>                                                                               </html>"
-         function convertIt()
+        var string = "<html>                                                                                         <head>                                                                                                 <link rel='stylesheet' href='./style.css'>                                                                                                                    </head>                                                                                  <body>                                                                                         <p>Content<p>                                                        <p>Content</p>                                                            <p>Content</p>                                                                <\/body>                                                                               </html>"
+            var hiddenTagOpen = "<style>";
+            var hiddenTagClose = "</style>";
+            var externalSheet = "p{color: red}"
+            function convertIt()
                 {
                     var code = document.getElementById("code").value;
-                    document.getElementById("display").innerHTML = code;  
+                    document.getElementById("display").innerHTML = code;
                 }
         function fillExample()
         {
             document.getElementById("code").value = string;
+            document.getElementById("external").value = hiddenTagOpen + externalSheet + hiddenTagClose;
             
         }
     </script>
@@ -34,6 +38,10 @@
                 
             </tr>
             <tr>
+                <td>
+                    <textarea id="external" rows="20" cols="50" style="font-family:Helvetica; font-size:20px">   
+                    </textarea>  
+                </td>
                 <td>
                 <textarea id="code" rows="20" cols="50" style="font-family:Helvetica; font-size:20px">   
                 </textarea>    
