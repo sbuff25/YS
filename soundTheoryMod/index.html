@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Theory Module</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./touchPunch.js"></script>
+</head>
+<body>
+    <div class="audioContainer">
+        <h1>Sound Theory Module</h1>
+        <div class="audio1" id="audio1">
+            <audio id="audioSample1" controls>
+                <source src="./audioSamples/sound2.mp3">
+            </audio>
+            <div class="audioPlayer">
+                <div class="visualizeAudio1">
+                    <canvas id="audioDisplay1"></canvas>
+                </div>
+                <button class="play-pause"id="playAudio1"><span class="material-icons">play_arrow</span></button>
+            <input class="slider" id="seekAudio1" type="range">
+                <span class="material-icons white">volume_down</span>
+            <input class="slider" id="volAudio1" type="range" max="100" min="0" step="1">
+            </div>
+        </div>
+        <br>
+        <div class="audio2" id="audio2">
+            
+            <audio id="audioSample2" controls>
+                <source src="./audioSamples/sound1.mp3">
+            </audio>
+            <div class="audioPlayer">
+                <div class="visualizeAudio1">
+                    <canvas id="audioDisplay2"></canvas>
+                </div>
+                <button class="play-pause"id="playAudio2"><span class="material-icons">play_arrow</span></button>
+            <input class="slider" id="seekAudio2" type="range">
+                <span class="material-icons white">volume_down</span>
+            <input class="slider" id="volAudio2" type="range" max="100" min="0" step="1">
+            </div>
+        </div>
+        
+    <script src="./audioClipOne.js"></script>
+    <script src="./audioClipTwo.js"></script>
+
+</body>
+</html>

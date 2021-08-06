@@ -1,0 +1,16 @@
+.audioContainer{
+   margin: auto;
+   width: 50%;
+   border: 2px solid black ;
+   padding: 10px;
+   text-align: center;
+}
+/* .slider{
+    -webkit-appearance: slider-vertical
+} */
+canvas{
+    border: solid black;
+}
+audio{
+    display: none;
+}
