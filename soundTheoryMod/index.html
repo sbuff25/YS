@@ -18,7 +18,7 @@
         <h1>Sound Theory Module</h1>
         <div class="audio1" id="audio1">
             <audio id="audioSample1" controls>
-                <source src="./audioSamples/sound2.mp3">
+                <source src="./audioSamples/sampleA64kbps.mp3">
             </audio>
             <div class="audioPlayer">
                 <div class="visualizeAudio1">
@@ -28,13 +28,18 @@
             <input class="slider" id="seekAudio1" type="range">
                 <span class="material-icons white">volume_down</span>
             <input class="slider" id="volAudio1" type="range" max="100" min="0" step="1">
+            <select name="sampleRate" id="sampleRateA" onchange="changeFrequency()">
+                <option value="64kbps">64kbps</option>
+                <option value="192kbps">192kbps</option>
+                <option value="320kbps">320kbps</option>
+            </select>
             </div>
         </div>
         <br>
         <div class="audio2" id="audio2">
             
             <audio id="audioSample2" controls>
-                <source src="./audioSamples/sound1.mp3">
+                <source src="./audioSamples/sampleB64kbps.mp3">
             </audio>
             <div class="audioPlayer">
                 <div class="visualizeAudio1">
@@ -44,6 +49,11 @@
             <input class="slider" id="seekAudio2" type="range">
                 <span class="material-icons white">volume_down</span>
             <input class="slider" id="volAudio2" type="range" max="100" min="0" step="1">
+            <select name="sampleRate" id="sampleRateB" onchange="changeFrequency()">
+                <option value="64kbps">64kbps</option>
+                <option value="192kbps">192kbps</option>
+                <option value="320kbps">320kbps</option>
+            </select>
             </div>
         </div>
         

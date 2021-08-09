@@ -10,11 +10,13 @@ const WIDTH1 = canvasElement1.clientWidth;
 const HEIGHT1 = canvasElement1.clientHeight;
 const source1 = audioCtx1.createMediaElementSource(audioElement1);
 const analyser1 = audioCtx1.createAnalyser();
+let matchTimeLine;
 analyser1.fftSize = 256;
 source1.connect(analyser1);
 analyser1.connect(audioCtx1.destination);
 const bufferLength1 = analyser1.frequencyBinCount;
 const dataArray1 = new Uint8Array(bufferLength1);
+var updatedFrequency
 // Player Icons
 const pauseIcon1 = "<span class='material-icons'>pause</span>";
 const playIcon1 = "<span class='material-icons'>play_arrow</span>";
@@ -23,7 +25,28 @@ const replayIcon1 = "<span class='material-icons'>replay</span>";
 let audioState1 = {
     isReplay : false,
     isPaused : true,
-}; 
+};
+//Select Audio Frequency
+function changeFrequency() {
+    var selectedFrequency = document.getElementById("sampleRateA").value;
+    updatedFrequency = selectedFrequency;
+    if (updatedFrequency == "64kbps") {
+        audioElement1.src = "./audioSamples/sampleA64kbps.mp3";
+        audioElement1.currentTime = matchTimeLine;
+        audioElement1.play();
+    }
+    if (updatedFrequency == "192kbps") {
+        audioElement1.src = "./audioSamples/sampleA192kbps.mp3";
+        audioElement1.currentTime = matchTimeLine;
+        audioElement1.play();
+    }
+    if (updatedFrequency == "320kbps") {
+        audioElement1.src = "./audioSamples/sampleA320kbps.mp3";
+        audioElement1.currentTime = matchTimeLine;
+        audioElement1.play();
+    }
+    // console.log(updatedFrequency);
+}
 // Set volume bar and seek bar
 seekAudio1.value = 0;
 volBar1.value = 100;
@@ -49,6 +72,7 @@ function togglePlayPause(){
 }
 function setProgress(){
     seekAudio1.value = audioElement1.currentTime;
+    matchTimeLine = seekAudio1.value;
 }
 function setDuration(){
     seekAudio1.max = audioElement1.duration;
@@ -68,10 +92,10 @@ function onVolumeSeek(evt){
 // Scrub through audio timeline
 // Event listeners for control of the audio state
 playPauseButton1.addEventListener('click',togglePlayPause);
-audioElement1.addEventListener('click', setProgress);
+audioElement1.addEventListener('timeupdate', setProgress);
 audioElement1.addEventListener('ended', onEnd);
 audioElement1.addEventListener('canplay', setDuration);
-seekAudio1.addEventListener('input',onSeek);
+seekAudio1.addEventListener('input', onSeek);
 volBar1.addEventListener('input', onVolumeSeek);
 // Define Draw Function
 function draw1(){
@@ -85,7 +109,6 @@ function draw1(){
         barHeight1 = dataArray1[i] /2.8;
         canvasCtx1.fillStyle = `rgb(50,50,200)`;
         canvasCtx1.fillRect(x,HEIGHT1 - barHeight1, barWidth1,barHeight1);
-
         x += barWidth1 +1;
     }
     requestAnimationFrame(draw1);

@@ -24,6 +24,27 @@ let audioState2 = {
     isReplay : false,
     isPaused : true,
 }; 
+//Select Audio Frequency
+function changeFrequency() {
+    var selectedFrequency = document.getElementById("sampleRateB").value;
+    updatedFrequency = selectedFrequency;
+    if (updatedFrequency == "64kbps") {
+        audioElement2.src = "./audioSamples/sampleB64kbps.mp3";
+        audioElement2.currentTime = matchTimeLine;
+        audioElement2.play();
+    }
+    if (updatedFrequency == "192kbps") {
+        audioElement2.src = "./audioSamples/sampleB192kbps.mp3";
+        audioElement2.currentTime = matchTimeLine;
+        audioElement2.play();
+    }
+    if (updatedFrequency == "320kbps") {
+        audioElement2.src = "./audioSamples/sampleB320kbps.mp3";
+        audioElement2.currentTime = matchTimeLine;
+        audioElement2.play();
+    }
+    // console.log(updatedFrequency);
+}
 // Set volume bar and seek bar
 seekAudio2.value = 0;
 volBar2.value = 100;
@@ -68,7 +89,7 @@ function onVolumeSeek(evt){
 // Scrub through audio timeline
 // Event listeners for control of the audio state
 playPauseButton2.addEventListener('click',togglePlayPause);
-audioElement2.addEventListener('click', setProgress);
+audioElement2.addEventListener('timeupdate', setProgress);
 audioElement2.addEventListener('ended', onEnd);
 audioElement2.addEventListener('canplay', setDuration);
 seekAudio2.addEventListener('input',onSeek);
